@@ -1,0 +1,127 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color palette to match design brief with green tones for trust and savings */
+  --background: #ffffff; /* Clean white background */
+  --foreground: #374151; /* Professional dark gray text */
+  --card: #f0fdf4; /* Soft green-tinted card background */
+  --card-foreground: #374151; /* Card text color */
+  --popover: #ffffff; /* Popover background */
+  --popover-foreground: #374151; /* Popover text */
+  --primary: #15803d; /* Green-700 for trust and growth */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #84cc16; /* Lime-500 vibrant accent */
+  --secondary-foreground: #374151; /* Dark text on secondary */
+  --muted: #f0fdf4; /* Muted green background */
+  --muted-foreground: #374151; /* Muted text */
+  --accent: #84cc16; /* Gamification accent color */
+  --accent-foreground: #374151; /* Text on accent */
+  --destructive: #e11d48; /* Rose-600 for destructive actions */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #e5e7eb; /* Light gray borders */
+  --input: #f0fdf4; /* Input field background */
+  --ring: #84cc16; /* Focus ring color */
+  --chart-1: #15803d; /* Points system chart color */
+  --chart-2: #84cc16; /* Achievements chart color */
+  --chart-3: #374151; /* User engagement chart color */
+  --chart-4: #e11d48; /* Premium subscriptions chart color */
+  --chart-5: #0891b2; /* Discounts claimed chart color */
+  --radius: 0.5rem; /* Consistent corner rounding */
+  --sidebar: #f0fdf4; /* Sidebar background */
+  --sidebar-foreground: #374151; /* Sidebar text */
+  --sidebar-primary: #15803d; /* Sidebar primary actions */
+  --sidebar-primary-foreground: #ffffff; /* Text on sidebar primary */
+  --sidebar-accent: #84cc16; /* Sidebar accent */
+  --sidebar-accent-foreground: #374151; /* Text on sidebar accent */
+  --sidebar-border: #e5e7eb; /* Sidebar borders */
+  --sidebar-ring: #84cc16; /* Sidebar focus rings */
+}
+
+.dark {
+  /* Updated dark mode colors maintaining the green theme with proper contrast */
+  --background: #0f172a; /* Dark background */
+  --foreground: #f1f5f9; /* Light text */
+  --card: #1e293b; /* Dark card background */
+  --card-foreground: #f1f5f9; /* Light card text */
+  --popover: #0f172a; /* Dark popover */
+  --popover-foreground: #f1f5f9; /* Light popover text */
+  --primary: #22c55e; /* Brighter green for dark mode */
+  --primary-foreground: #0f172a; /* Dark text on primary */
+  --secondary: #a3e635; /* Brighter secondary green */
+  --secondary-foreground: #0f172a; /* Dark text on secondary */
+  --muted: #1e293b; /* Dark muted background */
+  --muted-foreground: #94a3b8; /* Light muted text */
+  --accent: #a3e635; /* Bright accent for gamification */
+  --accent-foreground: #0f172a; /* Dark text on accent */
+  --destructive: #f43f5e; /* Brighter destructive color */
+  --destructive-foreground: #f1f5f9; /* Light text on destructive */
+  --border: #334155; /* Dark borders */
+  --input: #1e293b; /* Dark input background */
+  --ring: #a3e635; /* Focus ring for dark mode */
+  --chart-1: #22c55e; /* Dark mode chart colors */
+  --chart-2: #a3e635;
+  --chart-3: #94a3b8;
+  --chart-4: #f43f5e;
+  --chart-5: #0ea5e9;
+  --sidebar: #1e293b; /* Dark sidebar */
+  --sidebar-foreground: #f1f5f9; /* Light sidebar text */
+  --sidebar-primary: #22c55e; /* Sidebar primary in dark mode */
+  --sidebar-primary-foreground: #0f172a; /* Dark text on sidebar primary */
+  --sidebar-accent: #a3e635; /* Sidebar accent in dark mode */
+  --sidebar-accent-foreground: #0f172a; /* Dark text on sidebar accent */
+  --sidebar-border: #334155; /* Dark sidebar borders */
+  --sidebar-ring: #a3e635; /* Dark mode sidebar focus rings */
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
